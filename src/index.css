@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'montserrat';
+  cursor: url('/assets/cursor.cur'), auto !important;
+}
+ 
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+::selection{
+  background-color: rgba(137, 43, 226, 0.605);
+}

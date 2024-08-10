@@ -1,0 +1,22 @@
+.sidebar-options h4{
+    transition: transform ease 0.3s;
+    text-transform: uppercase;
+}
+
+.sidebar-options:hover h4{
+    transform: translateY(-100%);
+}
+
+.sidebar-options {
+    height: 1rem;
+    margin: 0.5rem 0;
+    overflow: hidden;
+    color: white;
+}
+
+.sidebar-option {
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Kanit', sans-serif;
+    transition: color 0.3s ease;
+}
