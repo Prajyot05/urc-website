@@ -16,7 +16,7 @@ export default function RegisterPage() {
         backgroundColor="black"
         className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full"
       >
-        <div className="register-container w-[70%] relative bg-[#272727] p-20 rounded-[30px]">
+        <div className="register-container relative bg-[#272727] rounded-[30px]">
             <h2 className="text-white text-3xl md:text-7xl font-bold">
             Register Here
             </h2>
@@ -29,7 +29,7 @@ export default function RegisterPage() {
                     Rule Book
                 </button> */}
             </div>
-            <img src="/assets/register_car.png" className="absolute scale-125 -bottom-40 -right-40" alt="" />
+            <img src="/assets/register_car.png" className="car-img absolute" alt="" />
         </div>
       </Vortex>
     </div>

@@ -123,11 +123,34 @@
     margin: 1rem;
 }
 
+/* Cards Page */
+
+.card-info{
+    background: linear-gradient(180deg, #5d36a2 0%, black 100%);
+}
+
 /* Register Page */
+
+.register-container{
+    padding: 5rem;
+    width: 70%;
+}
 
 .register-container h2{
     font-family: 'montserrat',sans-serif;
     transition: transform ease 0.3s;
+}
+
+.car-img{
+    transform: scale(1.25);
+    bottom: -10rem;
+    right: -10rem;
+}
+
+/* Prices Page */
+
+.prices-page{
+    background: linear-gradient(180deg, #5d36a2 0%, black 100%);
 }
 
 /* Footer */
@@ -136,6 +159,10 @@
     background: linear-gradient(180deg, black 30%, #6F44C2 100%);
     /* background-size: 400% 400%; */
     /* animation: gradientAnimation 10s ease infinite; */
+}
+
+.footer-top{
+    flex-direction: row;
 }
 
 .footer h4{
@@ -156,6 +183,20 @@
     }
     100% {
         background-position: 0% 50%;
+    }
+}
+
+/* Media Queries */
+
+@media (max-width: 1300px) {
+    .car-img{
+        right: -20rem;
+    }    
+}
+
+@media (max-width: 1150px) {
+    .register-container{
+        width: 80%;
     }
 }
 
@@ -187,6 +228,18 @@
 
     .flip-word {
         font-size: 1.8rem;
+    }
+
+    .register-container{
+        transform: scale(0.9);
+    }
+
+    .car-img{
+        transform: scale(1);
+    }
+
+    .footer-top{
+        transform: scale(0.8);
     }
 }
 
@@ -231,12 +284,22 @@
         transform: scale(2.5);
         margin-top: 13rem;
     }
+
+    .footer-top{
+        transform: scale(0.7);
+    }
 }
 
 @media (max-width: 525px) {
     .landing-page-container video{
         transform: scale(3.5);
         margin-top: 15rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .footer-top{
+        transform: scale(0.6);
     }
 }
 
@@ -261,6 +324,17 @@
 
     .urc-subtitle h3 {
         font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .footer-top{
+        flex-direction: column;
+        transform: scale(1);
+    }
+
+    .contact-us :nth-child(1){
+        width: 150%;
     }
 }
 
@@ -295,6 +369,10 @@
         margin-left: -5vw;
         margin-right: 0;
     }
+
+    .footer-top{
+        transform: scale(0.8);
+    }
 }
 
 @media (max-width: 335px) {
@@ -306,5 +384,9 @@
 @media (max-width: 310px) {
     .urc-title{
         margin-left: -10vw;
+    }
+
+    .footer-top{
+        transform: scale(0.7);
     }
 }
