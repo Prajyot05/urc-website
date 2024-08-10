@@ -27,13 +27,14 @@ export const FlipWords = ({
       return () => clearTimeout(timer);
     }
   }, [isAnimating, duration, startAnimation]);
+
   return (
     <AnimatePresence
       onExitComplete={() => {
         setIsAnimating(false);
       }}
     >
-      <motion.div
+       <motion.div
         initial={{
           opacity: 0,
           y: 10,
@@ -51,18 +52,21 @@ export const FlipWords = ({
           opacity: 0,
           y: -40,
           x: 40,
-          filter: "blur(8px)",
+          // filter: "blur(8px)",
           scale: 2,
           position: "absolute",
         }}
-        className={`flip-words ${className}`}
+        // className={`flip-words ${className}`}
         key={currentWord}
       >
-        {currentWord.split("").map((letter, index) => (
+         {currentWord.split("").map((letter, index) => (
           <motion.span
-            key={currentWord + index}
-            initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            // key={currentWord + index}
+            key={`${currentWord}-${index}`}
+            // initial={{ opacity: 0, y: 10, filter: "blur(1px)" }}
+            // animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 10}}
+            animate={{ opacity: 1, y: 0}}
             transition={{
               delay: index * 0.08,
               duration: 0.4,

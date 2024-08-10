@@ -1,0 +1,63 @@
+@import url(https://fonts.googleapis.com/css?family=Akronim);
+
+.fire {
+	margin: 50px auto;
+	width: 80%;
+	background-position: center center;
+	border-radius: 10px;
+	font-family: 'Akronim';
+}
+
+.fire:before {
+	content: '';
+	height: 100%;
+}
+
+.Blazing {
+	display: inline-block;
+    color: rgb(153, 50, 204); /* Dark Orchid */
+    font-size: 8rem;
+	outline: none;
+	vertical-align: middle;
+	text-shadow:
+        0 3px 20px purple,
+        0 0 20px purple,
+		0 0 10px violet,
+		4px -5px 6px lavender,
+		-4px -10px 10px lavender,
+		0 -10px 30px lavender;
+	animation: 2s Blazing infinite alternate linear;
+}
+
+@keyframes Blazing {
+	0%   { text-shadow: 0 3px 20px purple, 0 0 20px purple,
+		0 0 10px violet,
+		0 0 0 lavender,
+		0 0 5px lavender,
+		-2px -5px 5px lavender,
+		4px -10px 10px lavender; }
+	25%   { text-shadow: 0 3px 20px purple, 0 0 30px purple,
+		0 0 20px violet,
+		0 0 5px lavender,
+		-2px -5px 5px lavender,
+		3px -10px 10px lavender,
+		-4px -15px 20px lavender; }
+	50%   { text-shadow: 0 3px 20px purple, 0 0 20px purple,
+		0 -5px 10px violet,
+		-2px -5px 5px lavender,
+		3px -10px 10px lavender,
+		-4px -15px 20px lavender,
+		2px -20px 30px rgba(230, 230, 250, 0.5); } /* Light Lavender */
+	75%   { text-shadow: 0 3px 20px purple, 0 0 20px purple,
+		0 -5px 10px violet,
+		3px -5px 5px lavender,
+		-4px -10px 10px lavender,
+		2px -20px 30px rgba(230, 230, 250, 0.5),
+		0px -25px 40px rgba(230, 230, 250, 0); }
+	100%   { text-shadow: 0 3px 20px purple, 0 0 20px purple,
+		0 0 10px violet,
+		0 0 0 lavender,
+		0 0 5px lavender,
+		-2px -5px 5px lavender,
+		4px -10px 10px lavender; }
+}
