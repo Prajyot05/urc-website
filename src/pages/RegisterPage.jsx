@@ -1,11 +1,24 @@
 import React from "react";
 import { Vortex } from "../components/ui/vortex";
 import GlitchyButton from "../components/buttons/GlitchyButton";
-import Accordions from "../components/Accordions";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 export default function RegisterPage() {
+  useGSAP(() => {
+    gsap.from(".register-container", {
+      y: 100,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+          trigger: '.register-page',
+          start: '20% 50%',
+          end: '+=500'
+      }
+    })
+  })
   return (
-    <div className="w-full mx-auto rounded-md min-h-screen sm:py-20 overflow-hidden">
+    <div className="register-page w-full mx-auto rounded-md min-h-screen sm:py-20 overflow-hidden">
       {/* <Vortex
         backgroundColor="black"
         rangeY={800}
@@ -18,7 +31,7 @@ export default function RegisterPage() {
         className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full"
       >
         <div className="register-container relative bg-[#272727] rounded-[30px]">
-            <h2 className="text-white text-3xl md:text-7xl font-bold">
+            <h2 className="text-white text-center md:text-left text-3xl md:text-7xl font-bold">
             FAQ
             </h2>
             <p className="text-gray-500 text-lg md:text-2xl max-w-xl mt-6 pt-5">

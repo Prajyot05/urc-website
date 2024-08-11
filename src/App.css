@@ -168,12 +168,24 @@
 }
 
 /* Prices Page */
+
 .top-overlay{
     background: linear-gradient(180deg, black 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 .bottom-overlay{
     background: linear-gradient(0deg, black 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.animated-gradient {
+    animation: animateBg 5s linear infinite;
+    background-image: linear-gradient(90deg,#5d36a2,#6f44c2,#5a14db,#c227ff,#8046ec,#5d36a2,#6f44c2);
+    background-size: 600% 100%;
+}
+
+@keyframes animateBg {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 0%; }
 }
 
 /* .prices-page{
@@ -218,7 +230,7 @@
 @media (max-width: 1300px) {
     .car-img{
         right: -20rem;
-    }    
+    }
 }
 
 @media (max-width: 1150px) {
@@ -275,7 +287,7 @@
 }
 
 @media (max-width: 960px) {
-    .prices-page{
+    .prices-top, .prices-bottom{
         transform: scale(0.8);
     }
 }

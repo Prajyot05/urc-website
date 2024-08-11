@@ -1,7 +1,6 @@
 import React from "react";
 import { BackgroundGradientAnimation } from "./ui/background-gradient-animation";
 import PricePage from "../pages/PricePage";
-import FooterPage from "../pages/FooterPage";
 
 export function GradientBackground() {
   return (

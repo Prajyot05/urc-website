@@ -1,5 +1,4 @@
 import React from 'react'
-import { FlipWords } from './ui/flip-words';
 
 function URCSubtitle() {
     const words = ["creativity and engineering powers", "innovation and technical skills", "imagination and mechanical prowess", "design and engineering expertise", "ingenuity and technological mastery", "vision and robotics expertise", "artistry and technical know-how", "invention and engineering talent", "creativity and mechanical genius", "design thinking and robotic innovation", "conceptual brilliance and engineering precision"];

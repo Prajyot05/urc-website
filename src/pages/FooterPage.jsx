@@ -7,7 +7,7 @@ function FooterPage() {
   return (
     <div className='footer pt-20 w-screen pb-5 text-white'>
         <div className="footer-top flex justify-between items-center sm:px-10 sm:pb-10 sm:border-b-[0.1px] sm:border-b-gray-500">
-            <div className="footer-top-left flex flex-col lg:ml-32">
+            <div className="footer-top-left flex flex-col -ml-20 lg:ml-32">
                 <img src="/assets/logo.png" className='w-[10rem] sm:py-5' alt="" />
                 <h4 className='text-gray-400 hidden lg:block pb-5'><span className='text-white'>Location</span>: Pimpri Chinchwad College of Engineering and Research Pune, Plot No. B, Sector no. 110, Gate no.1, Laxminagar, Ravet, Haveli, Pune - 412101.</h4>
                 <div className="social flex gap-10 ml-10 pb-10 sm:ml-2">
