@@ -4,10 +4,9 @@ import BetterCards from '../components/BetterCards';
 
 function CardsPage() {
   return (
-    <div className='cards-page h-[80vh]'>
-        {/* <CardSlider /> */}
-        <h1 className='text-white text-center pt-20 text-6xl'>Tasks</h1>
-        <BetterCards />
+    <div className='cards-page flex h-fit py-40'>
+        {/* <BetterCards /> */}
+        <CardSlider />
     </div>
   )
 }

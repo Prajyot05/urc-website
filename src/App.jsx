@@ -5,6 +5,7 @@ import RegisterPage from './pages/RegisterPage'
 import FooterPage from './pages/FooterPage'
 import CardsPage from './pages/CardsPage'
 import PricePage from './pages/PricePage'
+import { GradientBackground } from './components/GradientBackground'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,7 +15,7 @@ function App() {
     <LandingPage />
     <CardsPage />
     <RegisterPage />
-    <PricePage />
+    <GradientBackground />
     <FooterPage />
     </>
   )

@@ -31,7 +31,8 @@ export default function CardSlider() {
       <Swiper
         slidesPerView={3}
         spaceBetween={30}
-        freeMode={true}
+        // freeMode={true}
+        loop={true}
         pagination={{
           clickable: true,
         }}

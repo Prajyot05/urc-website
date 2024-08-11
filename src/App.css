@@ -125,8 +125,28 @@
 
 /* Cards Page */
 
+.cards-page{
+    /* background: linear-gradient(190deg, #5d36a2 0%, black 100%); */
+    background: url(/assets/landing_bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .card-info{
     background: linear-gradient(180deg, #5d36a2 0%, black 100%);
+}
+
+.mySwiper .swiper-pagination {
+    bottom: 0 !important;
+}
+
+.swiper-pagination-bullet{
+    background-color: #ffffff !important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #5d36a2 !important;
 }
 
 /* Register Page */
@@ -148,17 +168,24 @@
 }
 
 /* Prices Page */
-
-.prices-page{
-    background: linear-gradient(180deg, #5d36a2 0%, black 100%);
+.top-overlay{
+    background: linear-gradient(180deg, black 0%, rgba(0, 0, 0, 0) 100%);
 }
+
+.bottom-overlay{
+    background: linear-gradient(0deg, black 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* .prices-page{
+    background: linear-gradient(180deg, #5d36a2 0%, black 100%);
+} */
 
 /* Footer */
 
 .footer{
-    background: linear-gradient(180deg, black 30%, #6F44C2 100%);
-    /* background-size: 400% 400%; */
-    /* animation: gradientAnimation 10s ease infinite; */
+    background: linear-gradient(0deg, black 30%, #6e44c249 100%);
+    /* background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite; */
 }
 
 .footer-top{
