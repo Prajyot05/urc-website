@@ -1,16 +1,9 @@
 "use client";
 import { cn } from "../../utils/cn";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import debounce from 'lodash/debounce';
 
 export const BackgroundGradientAnimation = ({
-  // gradientBackgroundStart = "rgb(108, 0, 162)",
-  // gradientBackgroundEnd = "rgb(0, 17, 82)",
-  // firstColor = "18, 113, 255",
-  // secondColor = "221, 74, 255",
-  // thirdColor = "100, 220, 255",
-  // fourthColor = "200, 50, 50",
-  // fifthColor = "180, 180, 50",
-  // pointerColor = "140, 100, 255",
   gradientBackgroundStart = "rgb(75, 0, 130)",
   gradientBackgroundEnd = "rgb(0, 0, 0)",
   firstColor = "85, 0, 150",
@@ -47,15 +40,10 @@ export const BackgroundGradientAnimation = ({
   const [curY, setCurY] = useState(0);
   const [tgX, setTgX] = useState(0);
   const [tgY, setTgY] = useState(0);
+
   useEffect(() => {
-    document.body.style.setProperty(
-      "--gradient-background-start",
-      gradientBackgroundStart
-    );
-    document.body.style.setProperty(
-      "--gradient-background-end",
-      gradientBackgroundEnd
-    );
+    document.body.style.setProperty("--gradient-background-start", gradientBackgroundStart);
+    document.body.style.setProperty("--gradient-background-end", gradientBackgroundEnd);
     document.body.style.setProperty("--first-color", firstColor);
     document.body.style.setProperty("--second-color", secondColor);
     document.body.style.setProperty("--third-color", thirdColor);
@@ -64,30 +52,35 @@ export const BackgroundGradientAnimation = ({
     document.body.style.setProperty("--pointer-color", pointerColor);
     document.body.style.setProperty("--size", size);
     document.body.style.setProperty("--blending-value", blendingValue);
-  }, []);
+  }, [gradientBackgroundStart, gradientBackgroundEnd, firstColor, secondColor, thirdColor, fourthColor, fifthColor, pointerColor, size, blendingValue]);
 
   useEffect(() => {
-    function move() {
-      if (!interactiveRef.current) {
-        return;
-      }
-      setCurX(curX + (tgX - curX) / 20);
-      setCurY(curY + (tgY - curY) / 20);
-      interactiveRef.current.style.transform = `translate(${Math.round(
-        curX
-      )}px, ${Math.round(curY)}px)`;
-    }
+    let animationFrameId: number;
+
+    const move = () => {
+      if (!interactiveRef.current) return;
+      setCurX((curX) => curX + (tgX - curX) / 20);
+      setCurY((curY) => curY + (tgY - curY) / 20);
+      interactiveRef.current.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+
+      animationFrameId = requestAnimationFrame(move);
+    };
 
     move();
+
+    return () => cancelAnimationFrame(animationFrameId);
   }, [tgX, tgY]);
 
-  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    if (interactiveRef.current) {
-      const rect = interactiveRef.current.getBoundingClientRect();
-      setTgX(event.clientX - rect.left);
-      setTgY(event.clientY - rect.top);
-    }
-  };
+  const handleMouseMove = useCallback(
+    debounce((event: React.MouseEvent<HTMLDivElement>) => {
+      if (interactiveRef.current) {
+        const rect = interactiveRef.current.getBoundingClientRect();
+        setTgX(event.clientX - rect.left);
+        setTgY(event.clientY - rect.top);
+      }
+    }, 16), // 60 FPS ~ 16ms
+    []
+  );
 
   const [isSafari, setIsSafari] = useState(false);
   useEffect(() => {
@@ -97,24 +90,15 @@ export const BackgroundGradientAnimation = ({
   return (
     <div
       className={cn(
-        "h-screen w-screen relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]",
+        "h-[120vh] sm:h-screen w-screen relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]",
         containerClassName
       )}
     >
       <svg className="hidden">
         <defs>
           <filter id="blurMe">
-            <feGaussianBlur
-              in="SourceGraphic"
-              stdDeviation="10"
-              result="blur"
-            />
-            <feColorMatrix
-              in="blur"
-              mode="matrix"
-              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
-              result="goo"
-            />
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
             <feBlend in="SourceGraphic" in2="goo" />
           </filter>
         </defs>

@@ -1,36 +1,54 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/css';
+import { FreeMode, Pagination } from 'swiper/modules';
+import { CanvasRevealCard } from './CanvasRevealCard';
+import "swiper/css";
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
-
-// import required modules
-import { FreeMode, Pagination } from 'swiper/modules';
-import CardInfo from './CardInfo';
 
 export default function CardSlider() {
   const info = [
     {
       title: "Line following",
-      desc: "A Line Following robotic car uses computer vision to detect the line. It calculates the deviation from the line's position and adjusts accordingly. PID control makes precise adjustments to steering and speed. This enables smooth and accurate real-time line tracking."
+      desc: "The robot must autonomously follow a predefined line path on the ground from start to finish."
     },
     {
       title: "Color code picking",
-      desc: "The robotic car follows a Color Code Following system, using RGB/HSV color detection to identify markers. It reacts accordingly, changing direction or speed, and utilizes a Finite State Machine (FSM) to manage actions. This enables coordinated navigation and decision-making based on color codes. The car seamlessly integrates color detection and FSM for efficient path-following."
+      desc: "The robot must be autonomously navigate through an obstacle course featuring various physical barriers and challenges."
     },
     {
       title: "Maze solving",
-      desc: "Maze Solving involves using graph-based algorithms like DFS, BFS, or A* to navigate efficiently. These algorithms enable the robot to find the shortest path to the goal. Wall-following strategies are combined with decision-making algorithms to handle dynamic environments. This hybrid approach ensures adaptability and optimizes maze solving performance"
+      desc: "The robot must autonomously navigate through a maze with a clear start and end point."
+    },
+    {
+      title: "Control Pathway",
+      desc: "The robot must be autonomously navigate through an obstacle course featuring various physical barriers and challenges."
+    },
+    {
+      title: "Pick and Place",
+      desc: "The robot must manually pick up and arrange blocks to form a specific pattern displayed at the start."
     }
   ]
   return (
-    <div className='swiper-container w-[80%] mx-auto'>
+    <div className='swiper-container w-full md:w-[90%] mx-auto'>
       <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
+        slidesPerView={1}
+        breakpoints={{
+          1200: {
+            slidesPerView: 3
+          },
+          1000: {
+            slidesPerView: 2
+          },
+          640: {
+            slidesPerView: 2,
+          },
+          300: {
+            slidesPerView: 1
+          }
+        }}
+        spaceBetween={-10}
         // freeMode={true}
         loop={true}
         pagination={{
@@ -42,14 +60,7 @@ export default function CardSlider() {
         {
           info.map((item, index) => (
             <SwiperSlide key={index}>
-              <CardInfo title={item.title} desc={item.desc} />
-            </SwiperSlide>
-          ))
-        }
-        {
-          info.map((item, index) => (
-            <SwiperSlide key={index}>
-              <CardInfo title={item.title} desc={item.desc} />
+              <CanvasRevealCard cardTitle={item.title + " TASK"} cardDesc={item.desc} />
             </SwiperSlide>
           ))
         }

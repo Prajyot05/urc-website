@@ -8,15 +8,14 @@ import PricePage from './pages/PricePage'
 import { GradientBackground } from './components/GradientBackground'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-    <LandingPage />
-    <CardsPage />
-    <RegisterPage />
-    <GradientBackground />
-    <FooterPage />
+      <LandingPage />
+      <CardsPage />
+      <RegisterPage />
+      <GradientBackground />
+      <FooterPage />
     </>
   )
 }
