@@ -11,10 +11,10 @@ function SliderButton({text}) {
 
   return (
       <div className="sidebar-options">
-          <h4 className="sidebar-option" onClick={() => scrollToSection(`.${text.toLowerCase()}-page`)}>
+          <h4 className="sidebar-option" onClick={() => scrollToSection(text)}>
               {text}
           </h4>
-          <h4 className="sidebar-option" onClick={() => scrollToSection(`.${text.toLowerCase()}-page`)}>
+          <h4 className="sidebar-option" onClick={() => scrollToSection(text)}>
               {text}
           </h4>
       </div>

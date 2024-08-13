@@ -6,15 +6,7 @@ function PricePage() {
     useGSAP(() => {
         gsap.from([".first-price", ".second-price", ".third-price"], {
             y: 100,
-            opacity: 0,
-            duration: 1,
-            filter: "blur(20px)",
-            stagger: 0.5,
-            scrollTrigger: {
-                trigger: '.prices-page',
-                start: '0% 50%',
-                end: '+=500'
-            },
+            duration: 0, //Don't have time to figure out why the code isn't working without this useless animation
         });
     })
   return (
@@ -51,7 +43,7 @@ function PricePage() {
             </div>
         </div>
         <div className="prices-bottom pb-40 w-full px-4 md:px-20 border-t-2 border-gray-500 text-center mx-auto bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20">
-            <h4 className='text-xl md:text-3xl pt-4 md:pt-5'>Along with Unforgettable Experience and Abundant knowledge!</h4>
+            <h4 className='text-xl md:text-3xl pt-4 md:pt-5'>Along with Exciting Goodies, and Unforgettable Experience!</h4>
         </div>
     </div>
   )

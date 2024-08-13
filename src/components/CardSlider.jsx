@@ -6,6 +6,7 @@ import { CanvasRevealCard } from './CanvasRevealCard';
 import "swiper/css";
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
+import CardInfo from './CardInfo';
 
 export default function CardSlider() {
   const info = [
@@ -31,7 +32,7 @@ export default function CardSlider() {
     }
   ]
   return (
-    <div className='swiper-container w-full md:w-[90%] mx-auto'>
+    <div className='swiper-container hidden md:block w-full md:w-[90%] mx-auto'>
       <Swiper
         slidesPerView={1}
         breakpoints={{
@@ -43,12 +44,9 @@ export default function CardSlider() {
           },
           640: {
             slidesPerView: 2,
-          },
-          300: {
-            slidesPerView: 1
           }
         }}
-        spaceBetween={-10}
+        spaceBetween={30}
         // freeMode={true}
         loop={true}
         pagination={{
@@ -60,7 +58,7 @@ export default function CardSlider() {
         {
           info.map((item, index) => (
             <SwiperSlide key={index}>
-              <CanvasRevealCard cardTitle={item.title + " TASK"} cardDesc={item.desc} />
+              <CardInfo title={item.title} desc={item.desc} />
             </SwiperSlide>
           ))
         }
