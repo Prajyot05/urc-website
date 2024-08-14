@@ -34,7 +34,7 @@ function FooterPage() {
                     <h4 className='text-[2rem]'>Contact Us</h4>
                     <h4 className='text-[1.2rem] hover:text-white hover:scale-105 text-gray-400'>98609 22884</h4>
                     <h4 className='text-[1.2rem] hover:text-white hover:scale-105 text-gray-400'>93258 23736</h4>
-                    <h4 className='text-[1.2rem] hover:text-white hover:scale-105 text-gray-400'>urcxpccoer@gmail.com</h4>
+                    <h4 className='text-[1.2rem] hover:text-white hover:scale-105 text-gray-400'>urcxpccoer@pccoer.in</h4>
                 </div>
             </div>
         </div>

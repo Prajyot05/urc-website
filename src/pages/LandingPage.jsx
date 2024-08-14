@@ -4,6 +4,7 @@ import URCTitle from '../components/URCTitle'
 import URCSubtitle from '../components/URCSubtitle'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+import GlitchyButton from '../components/buttons/GlitchyButton'
 
 function LandingPage() {
   // useGSAP(() => {
@@ -49,6 +50,7 @@ function LandingPage() {
         <Navbar />
         <URCTitle />
         <URCSubtitle />
+        <div className="reg-btn md:scale-[1.3] flex justify-center py-10"><GlitchyButton /></div>
       </div>
     </div>
   )
