@@ -34,11 +34,11 @@ function LandingPage() {
 
   const videoRef = useRef(null);
 
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 2;
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (videoRef.current) {
+  //     videoRef.current.playbackRate = 2;
+  //   }
+  // }, []); This was making the website slow
   return (
     <div className='landing-page-container w-full relative overflow-hidden'>
       <video ref={videoRef} className='absolute min-w-full top-0 left-0 obj-cover object-center z-0' autoPlay loop muted src="/assets/main_bg.mp4"></video>

@@ -3,15 +3,22 @@ import SliderButton from './buttons/SliderButton'
 import FillInButton from './buttons/FillInButton'
 
 function Navbar() {
+  const scrollToSection = (selector) => {
+    const element = document.querySelector(selector);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className='navbar z-10'>
         <div className="nav-left">
           <img src="/assets/logo.png" alt="" />
         </div>
         <div className="nav-mid hidden md:flex">
-          <SliderButton text={"Home"} />
-          <SliderButton text={"About"} />
-          <SliderButton text={"Contact"} />
+          <div onClick={() => scrollToSection(".landing-page-container")}><SliderButton text={"Home"} /></div>
+          <div onClick={() => scrollToSection(".register-page")}><SliderButton text={"Register"} /></div>
+          <div onClick={() => scrollToSection(".footer")}><SliderButton text={"Contact"} /></div>
         </div>
         <div className="nav-right">
           <FillInButton />

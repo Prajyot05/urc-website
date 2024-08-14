@@ -1,3 +1,8 @@
+a{
+    text-decoration: none;
+    outline: none;
+}
+
 .landing-page-container video{
     transform: scale(1.1);
 }
