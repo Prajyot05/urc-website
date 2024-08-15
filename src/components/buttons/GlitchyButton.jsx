@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./GlitchyButton.css"
 
-function GlitchyButton() {
+function GlitchyButton({handleOpen}) {
   return (
-    <button className="button-49" role="button">Register</button>
+      <button onClick={handleOpen} className="button-49" role="button">Register</button>
   )
 }
 

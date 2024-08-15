@@ -1,6 +1,6 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import React from 'react'
+import React, { useState } from 'react'
 
 function PricePage() {
     useGSAP(() => {
@@ -8,11 +8,35 @@ function PricePage() {
             y: 100,
             duration: 0, //Don't have time to figure out why the code isn't working without this useless animation
         });
-    })
+    });
+
+    const [showFallback, setShowFallback] = useState(false);
+
+    const handleError = () => {
+        setShowFallback(true);
+    };
+
   return (
     // <div className='prices-page animated-gradient py-40 text-white'>
     <div className='prices-page overflow-hidden relative text-white'>
-        <video loop muted autoPlay className='absolute w-full h-full object-cover object-center' src="/assets/price_bg.mp4"></video>
+        <div className='absolute w-full h-full'>
+            {!showFallback ? (
+                <video
+                    loop
+                    muted
+                    autoPlay
+                    className='w-full h-full object-cover object-center'
+                    src="/assets/price_bg.mp4"
+                    onError={handleError}
+                />
+            ) : (
+                <img
+                    src="/assets/price_bg_fallback.png"
+                    alt="Static background"
+                    className='w-full h-full object-cover object-center'
+                />
+            )}
+        </div>
         <div className="prices-top pt-20 md:pt-40 flex flex-col md:flex-row gap-10 md:gap-40 px-4 md:px-20 pb-10 md:pb-20 justify-center">
             <div className="second-price w-full order-2 md:order-1 md:w-1/3 flex flex-col items-center justify-center md:justify-start">
                 <div className="trophy">

@@ -17,7 +17,7 @@ function Navbar() {
         </div>
         <div className="nav-mid hidden md:flex">
           <div onClick={() => scrollToSection(".landing-page-container")}><SliderButton text={"Home"} /></div>
-          <div onClick={() => scrollToSection(".register-page")}><SliderButton text={"Register"} /></div>
+          <div onClick={() => scrollToSection(".register-page")}><SliderButton text={"FAQs"} /></div>
           <div onClick={() => scrollToSection(".footer")}><SliderButton text={"Contact"} /></div>
         </div>
         <div className="nav-right">

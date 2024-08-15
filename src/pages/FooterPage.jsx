@@ -27,7 +27,7 @@ function FooterPage() {
                 <div className="hidden md:flex lg:ml-40 flex-col gap-5">
                     <h4 className='text-[2rem]'>Navigate</h4>
                     <h4 onClick={() => scrollToSection(".landing-page-container")} className='text-[1.2rem] hover:text-white hover:scale-105 text-gray-400'>Home</h4>
-                    <h4 onClick={() => scrollToSection(".register-page")} className='text-[1.2rem] hover:text-white hover:scale-105 text-gray-400'>Register</h4>
+                    <h4 onClick={() => scrollToSection(".register-page")} className='text-[1.2rem] hover:text-white hover:scale-105 text-gray-400'>FAQs</h4>
                     <h4 onClick={() => scrollToSection(".footer")} className='text-[1.2rem] hover:text-white hover:scale-105 text-gray-400'>Contact</h4>
                 </div>
                 <div className="contact-us sm:ml-20 lg:ml-40 flex flex-col gap-5">
