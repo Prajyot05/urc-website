@@ -3,7 +3,7 @@ import "./GlitchyButton.css"
 
 function GlitchyButton({handleOpen}) {
   return (
-      <button onClick={handleOpen} className="button-49" role="button">Register</button>
+      <button onClick={handleOpen} className="button-49" role="button">Visitor Pass</button>
   )
 }
 
